@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DB_CONFIG>
+	<db_common remark="sonar174">
+		<driver>com.mysql.jdbc.Driver</driver>
+		<dburl>jdbc:mysql://10.1.234.174:3306/sonar</dburl>
+		<dbusr>sonar</dbusr>
+		<dbpwd>qmcsonar2017!</dbpwd>
+	</db_common>
+</DB_CONFIG>

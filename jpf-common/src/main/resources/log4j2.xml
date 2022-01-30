@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- log from sqp-master -->
+<configuration status="OFF">
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<Filters>
+				<!-- // 设置Appender日志的上限 -->
+				<!-- 
+				<ThresholdFilter level="error" onMatch="DENY"
+					onMismatch="NEUTRAL" />
+					 -->
+				<!-- // 设置Appender日志的底线，最终就能使该文件中只输出info日志了 -->
+				<ThresholdFilter level="debug" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+			<PatternLayout
+				pattern="[%-5p] %d   %C{1.}.%M(%L) %msg%n" />
+			<!-- <PatternLayout pattern="%p %d{HH:mm:ss,SSS} %l- [%M] %msg%n"/> <PatternLayout 
+				pattern="%p %d{HH:mm:ss,SSS} %l - %msg%n"/> -->
+		</Console>
+		<File name="appFile" fileName="${sys:user.home}/jpfshare/logs/info.log"
+			append="false">
+			<ThresholdFilter level="info" onMatch="ACCEPT"
+				onMismatch="DENY" />
+			<PatternLayout
+				pattern="[%-5p] %d   %C{1.}.%M(%L) %msg%n" />
+		</File>
+	</appenders>
+	<loggers>
+		<root level="debug">
+			<appender-ref ref="appFile" />
+			<appender-ref ref="Console" />
+		</root>
+	</loggers>
+</configuration> 
